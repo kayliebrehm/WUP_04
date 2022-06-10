@@ -77,3 +77,4 @@ Based on the graph, there is a difference between Less than high school and grad
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+I reject the null hypothesis due to the p-value being 0.000236. When observing  mean and median scores within the box plot, there does seem to be a difference between the average score on the WORDSUM test and level of schooling DEGREE. This fact is proven in the numerical findings section. Additionally, there is a significant difference between less than high school and graduates. This is shown in the final graph.
