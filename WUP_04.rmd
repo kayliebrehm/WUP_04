@@ -46,6 +46,8 @@ GSSDataframe=read.csv("GSScsv.csv")
 boxplot(WORDSUM~DEGREE,data=GSSDataframe)
 ```
 
+This boxplot shows us median and quartile values, which seem to differ between each group. It also shows us the outliers of certain degrees. Overall, the data is very close in values, but there is still a clear difference between groups. The more advanced in education, the higher the score seems to be, and vise versa.
+
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
@@ -53,6 +55,7 @@ boxplot(WORDSUM~DEGREE,data=GSSDataframe)
 favstats(WORDSUM~DEGREE,data=GSSDataframe)
 ```
 
+This table shows the numerical values for median, mean, quartiles, and standard deviation. Overall, we see a different mean for each degree level. The mean in bachelors and junior college is the same but all the other means are different. The max range is 12 for all groups except less than high school, which is 11. The quarter three value is the same in all groups apart from high school and less than high school. These ever changing values show variation within WORDSUM scores in each group.
 
 ## Inferential Results
 
@@ -61,6 +64,15 @@ favstats(WORDSUM~DEGREE,data=GSSDataframe)
 model1 <- aov(WORDSUM~DEGREE,data=GSSDataframe)
 summary.aov(model1)
 ```
+The p-value is 0.000236. Since that is less than 0.05, we reject the null hypothesis.
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 17, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+Based on the graph, there is a difference between Less than high school and graduates because their confidence level does not reach 0.
 
 # Discussion and Conclusion
 
